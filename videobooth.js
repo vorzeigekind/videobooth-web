@@ -12,20 +12,20 @@
 function changeVis(visibility, target) {
     var queryTarget = document.querySelector(target);
     if (target.includes('icon')) {
-        if (visibility === 'visible') {
+        if (visibility == 'visible') {
             queryTarget.classList.remove('hidden-icon');
             queryTarget.classList.add('visible-icon');
-        } else if (visibility === 'hidden') {
+        } else if (visibility == 'hidden') {
             queryTarget.classList.remove('visible-icon');
             queryTarget.classList.add('hidden-icon');
         }
-    } else if (visibility === 'visible') {
+    } else if (visibility == 'visible') {
         queryTarget.classList.remove('hidden-prev', 'hidden-next');
         queryTarget.classList.add('visible-current');
-    } else if (visibility === 'next') {
+    } else if (visibility == 'next') {
         queryTarget.classList.remove('hidden-prev', 'visible-current');
         queryTarget.classList.add('hidden-next');
-    } else if (visibility === 'prev') {
+    } else if (visibility == 'prev') {
         queryTarget.classList.remove('hidden-next', 'visible-current');
         queryTarget.classList.add('hidden-prev');
     } /* else {
@@ -56,9 +56,8 @@ if (wsID == null) {
     console.log('ERROR => no token ⁉️');
     changeVis('visible', '#no-token');
 } else {
-    //let ws = new WebSocket('wss://videobooth-web-socket.azurewebsites.net:8080'); // microsoft azure
     //let ws = new WebSocket('wss://touch-websocket.onrender.com:443'); //niklas render account free
-    let ws = new WebSocket('wss://videoboothwebsocket.onrender.com:443'); //  premium render account vorzeigekind
+    let ws = new WebSocket('wss://ws.vorzeigeassets.de:443'); //  premium render account vorzeigekind
     var verified = false;
     
     // DEV button
@@ -233,29 +232,29 @@ if (wsID == null) {
 
     ws.addEventListener('message', (message) => { 
         if (message && message.data) {
-            if (message.data === 'ping') { 
+            if (message.data == 'ping') { 
                 console.log('WS => received ping 🏓 returning pong ');
                 ws.send('pong');
                 return;
             }
             let data = JSON.parse(message.data);
             if (data) {
-                if (verified === true && 'disconnect' in data) {
+                if (verified == true && 'disconnect' in data) {
                     console.log('ERROR => other client > terminating this instance ❌');
                     ws.close();
                 }
-                if (verified === false && 'wsIDTD' in data) {
+                if (verified == false && 'wsIDTD' in data) {
                     const touchID = data['wsIDTD'];
                     console.log('WS => client token = ' + wsID);
                     console.log('WS => received token = ' + touchID);
-                    if (wsID === touchID) {
+                    if (wsID == touchID) {
                         console.log('WS => token accepted > connection established 🎉');
                         changeVis('visible', '#language');
                         ws.send(indexifyJSON('verifieduser'));
                         console.log('WS => terminating other clients 🔫');
                         setTimeout(() => { ws.send(indexifyJSON('disconnect')); }, 100);
                         verified = true;
-                    } else if (wsID !== touchID) { 
+                    } else if (wsID != touchID) { 
                         console.log('ERROR => token denied 🚧');
                         ws.close();
                     }
