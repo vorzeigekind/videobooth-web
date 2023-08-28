@@ -82,7 +82,7 @@ if (wsID == null) {
         changeVis('visible', '#mode');
         changeVis('prev', '#language');
         changeVis('visible', '#icon-english');
-        changeLang('englisch');
+        //changeLang('englisch'); // TODO function
         ws.send(JSON.stringify({'language': 0}));
     };
 
@@ -92,7 +92,7 @@ if (wsID == null) {
         changeVis('visible', '#mode');
         changeVis('prev', '#language');
         changeVis('visible', '#icon-german');
-        changeLang('german');
+        //changeLang('german'); // TODO function
         ws.send(JSON.stringify({"language": 1}));
     };
 
@@ -110,58 +110,58 @@ if (wsID == null) {
         changeVis('visible', '#icon-multiplayer');
     };
 
-    // SCENE > 1
-    document.querySelector('#thumb-1').onclick = function(){
+    // SCENE > 0
+    document.querySelector('#thumb-0').onclick = function(){
         //console.log('INPUT => scene = 1');
         changeVis('visible', '#record');
         changeVis('prev', '#singleplayer');
-        document.getElementById('record').style.backgroundImage = 'url(https://vorzeigekind.de/wp-content/uploads/2023/03/01_Strategie0014.png)';
-        ws.send(JSON.stringify({'scene': 1}));
+        document.getElementById('record').style.backgroundImage = 'url(https://vorzeigekind.de/wp-content/uploads/2023/08/Auto.jpg)';
+        ws.send(JSON.stringify({'scene': 0}));
     };
 
-    // SCENE > 2
-    document.querySelector('#thumb-2').onclick = function(){
+    // SCENE > 1
+    document.querySelector('#thumb-1').onclick = function(){
         //console.log('INPUT => scene = 2');
         changeVis('visible', '#record');
         changeVis('prev', '#singleplayer');
-        document.getElementById('record').style.backgroundImage = 'url(https://vorzeigekind.de/wp-content/uploads/2023/03/01_Strategie0014.png)';
+        document.getElementById('record').style.backgroundImage = 'url(https://vorzeigekind.de/wp-content/uploads/2023/08/Jones.jpg)';
+        ws.send(JSON.stringify({'scene': 1}));
+    };
+
+    // SCENE > 2 "STORY"
+    document.querySelector('#thumb-2').onclick = function(){
+        //console.log('INPUT => scene = 3');
+        changeVis('visible', '#record');
+        changeVis('prev', '#singleplayer');
+        document.getElementById('record').style.backgroundImage = 'url(https://vorzeigekind.de/wp-content/uploads/2023/08/Storymode.jpg)';
         ws.send(JSON.stringify({'scene': 2}));
     };
 
     // SCENE > 3
     document.querySelector('#thumb-3').onclick = function(){
-        //console.log('INPUT => scene = 3');
+        //console.log('INPUT => scene = 4');
         changeVis('visible', '#record');
         changeVis('prev', '#singleplayer');
-        document.getElementById('record').style.backgroundImage = 'url(https://vorzeigekind.de/wp-content/uploads/2023/03/01_Strategie0014.png)';
+        document.getElementById('record').style.backgroundImage = 'url(https://vorzeigekind.de/wp-content/uploads/2023/08/Peak.jpg)';
         ws.send(JSON.stringify({'scene': 3}));
     };
 
     // SCENE > 4
     document.querySelector('#thumb-4').onclick = function(){
-        //console.log('INPUT => scene = 4');
+        //console.log('INPUT => scene = 5');
         changeVis('visible', '#record');
-        changeVis('prev', '#singleplayer');
-        document.getElementById('record').style.backgroundImage = 'url(https://vorzeigekind.de/wp-content/uploads/2023/03/01_Strategie0014.png)';
+        changeVis('prev', '#multiplayer');
+        document.getElementById('record').style.backgroundImage = 'url(https://vorzeigekind.de/wp-content/uploads/2023/08/Talent.jpg)';
         ws.send(JSON.stringify({'scene': 4}));
     };
 
     // SCENE > 5
     document.querySelector('#thumb-5').onclick = function(){
-        //console.log('INPUT => scene = 5');
-        changeVis('visible', '#record');
-        changeVis('prev', '#multiplayer');
-        document.getElementById('record').style.backgroundImage = 'url(https://vorzeigekind.de/wp-content/uploads/2023/03/01_Strategie0014.png)';
-        ws.send(JSON.stringify({'scene': 5}));
-    };
-
-    // SCENE > 6
-    document.querySelector('#thumb-6').onclick = function(){
         //console.log('INPUT => scene = 6');
         changeVis('visible', '#record');
         changeVis('prev', '#multiplayer');
-        document.getElementById('record').style.backgroundImage = 'url(https://vorzeigekind.de/wp-content/uploads/2023/03/01_Strategie0014.png)';
-        ws.send(JSON.stringify({'scene': 6}));
+        document.getElementById('record').style.backgroundImage = 'url(https://vorzeigekind.de/wp-content/uploads/2023/08/Meet.jpg)';
+        ws.send(JSON.stringify({'scene': 5}));
     };
 
     // RECORD button
