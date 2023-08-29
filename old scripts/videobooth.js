@@ -9,38 +9,38 @@
 // scene: 0-6
 
 // makes element visible or hidden
-function changeVis(visibility, target) {
-    var queryTarget = document.querySelector(target);
-    if (target.includes('icon')) {
-        if (visibility == 'visible') {
-            queryTarget.classList.remove('hidden-icon');
-            queryTarget.classList.add('visible-icon');
-        } else if (visibility == 'hidden') {
-            queryTarget.classList.remove('visible-icon');
-            queryTarget.classList.add('hidden-icon');
-        }
-    } else if (visibility == 'visible') {
-        queryTarget.classList.remove('hidden-prev', 'hidden-next');
-        queryTarget.classList.add('visible-current');
-    } else if (visibility == 'next') {
-        queryTarget.classList.remove('hidden-prev', 'visible-current');
-        queryTarget.classList.add('hidden-next');
-    } else if (visibility == 'prev') {
-        queryTarget.classList.remove('hidden-next', 'visible-current');
-        queryTarget.classList.add('hidden-prev');
-    } /* else {
-        console.log('ERROR => cant change ' + target + ' to ' + visibility);
-    } */
-}
+//function changeVis(visibility, target) {
+//    var queryTarget = document.querySelector(target);
+//    if (target.includes('icon')) {
+//        if (visibility == 'visible') {
+//            queryTarget.classList.remove('hidden-icon');
+//            queryTarget.classList.add('visible-icon');
+//        } else if (visibility == 'hidden') {
+//            queryTarget.classList.remove('visible-icon');
+//            queryTarget.classList.add('hidden-icon');
+//        }
+//    } else if (visibility == 'visible') {
+//        queryTarget.classList.remove('hidden-prev', 'hidden-next');
+//        queryTarget.classList.add('visible-current');
+//    } else if (visibility == 'next') {
+//        queryTarget.classList.remove('hidden-prev', 'visible-current');
+//        queryTarget.classList.add('hidden-next');
+//    } else if (visibility == 'prev') {
+//        queryTarget.classList.remove('hidden-next', 'visible-current');
+//        queryTarget.classList.add('hidden-prev');
+//    } /* else {
+//        console.log('ERROR => cant change ' + target + ' to ' + visibility);
+//    } */
+//}
 
 // gets randomised index and appends to attribute
-function indexifyJSON(jsonAttribute) {
-    var rIndex =  Math.floor(Math.random() * 10000);
-    var obj = {};
-    obj[jsonAttribute] = rIndex;
-    var objJSON = JSON.stringify(obj);
-    return(objJSON);
-}
+//function indexifyJSON(jsonAttribute) {
+//    var rIndex =  Math.floor(Math.random() * 10000);
+//    var obj = {};
+//    obj[jsonAttribute] = rIndex;
+//    var objJSON = JSON.stringify(obj);
+//    return(objJSON);
+//}
 
 // change language
 /* function changeLang(language) {
