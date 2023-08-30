@@ -23,18 +23,10 @@ function checkText(){
     return( httpReq.status );
 }
 
-function checkId(){
-    if ( id == null ) {
-        console.log('ERROR => no token ⁉️');
-    } else {
-        startSocket( id );
-    }
-}
-
 export function checkAll(){
     var statusVideo1zu1 = checkVideo( '1zu1' );
     var statusText = checkText();
-    console.log( statusVideo1zu1, statusVideo1zu1 );
+    //console.log( statusVideo1zu1, statusVideo1zu1 );
     if ( statusVideo1zu1 === 200 ){
         goToSection( 'video' );
         loadVideo( id );
@@ -44,6 +36,10 @@ export function checkAll(){
             location.reload();
         }, 10000);
     } else {
-        checkId();
+        if ( id == null ) {
+            console.log('ERROR => no token ⁉️');
+        } else {
+            startSocket( id );;
+        }
     }
 };

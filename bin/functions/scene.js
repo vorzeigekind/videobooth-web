@@ -37,7 +37,7 @@ export function setupScenes( ws ){
             //console.log( 'REMOVING: ' + indexRename + '-singleplayer' ); //
             document.querySelector( '#wrap-' + indexRename + '-singleplayer' ).remove();
         }
-        document.querySelector( '.thumbnail-' + indexRename ).src = './bin/thumbnails/' + customer.scenes[scene].thumbnail;
+        document.querySelector( '.thumbnail-' + indexRename ).src = 'https://vorzeigeassets.de/videobooth/bin/thumbnails/' + customer.scenes[scene].thumbnail;
         //console.log( 'scene-' + scene, indexRename );
         document.querySelector( '.wrap-' + scene ).onclick = function(){
             setScene ( scene, false, ws );

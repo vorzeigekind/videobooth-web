@@ -15,5 +15,5 @@ export function loadVideo( id ){
             video = video.replace( 'http://videolink', config.video.blob + id + '.' + config.video.filetype + config.video.token );
             video.classList.add( 'video-accessable' );
         }
-    }, 10000);
+    }, 60000);
 };

@@ -23,7 +23,8 @@ function setLanguage( languageToSet, initial, ws ){
                 ws.send(JSON.stringify({'language': langValue}));
             }
         }
-        goToSection( 'mode' );
+        document.querySelector( '#button-forward-language' ).classList.add( 'button-forward-selected' );
+        //goToSection( 'mode' ); using button forward right now
     }
 }
 
