@@ -11,8 +11,13 @@ const id = urlParamsLoad.get('wsID');
 
 function checkVideo( modifier ){
     var httpReq = new XMLHttpRequest();
-    console.log( 'CHECKING STATUS => ' + config.video.blob + modifier + id + '.' + config.video.filetype + '?' + config.video.token );
-    httpReq.open('HEAD', config.video.blob + modifier + id + '.' + config.video.filetype + '?' + config.video.token, false );
+    if ( modifier == null ) {
+        console.log( 'CHECKING STATUS => ' + config.video.blob + id + '.' + config.video.filetype + '?' + config.video.token );
+        httpReq.open('HEAD', config.video.blob + id + '.' + config.video.filetype + '?' + config.video.token, false );
+    } else {
+        console.log( 'CHECKING STATUS => ' + config.video.blob + modifier + id + '.' + config.video.filetype + '?' + config.video.token );
+        httpReq.open('HEAD', config.video.blob + modifier + id + '.' + config.video.filetype + '?' + config.video.token, false );
+    }
     httpReq.send();
     console.log( 'VIDEO STATUS => ' + httpReq.status );
     if ( httpReq.status === 200 ) {
