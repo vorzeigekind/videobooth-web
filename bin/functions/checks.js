@@ -50,15 +50,18 @@ function checkAll(){
     if ( statusVideo1zu1 == true ){
         goToSection( 'video' );
         loadVideo( id );
+        setupScenes( 'nows' );
         setupLanguages( 'nows' );
     } else if ( statusText == true ){
         goToSection( 'text' );
+        setupScenes( 'nows' );
         setupLanguages( 'nows' );
         setTimeout(() => { location.reload(); }, 10000);
     } else {
         if ( id == null ) {
             console.log('ERROR => no token ⁉️');
             goToSection( 'error-no-id' );
+            setupScenes( 'nows' );
             setupLanguages( 'nows' );
         } else {
             startSocket( id );;

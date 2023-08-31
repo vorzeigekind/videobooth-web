@@ -12,7 +12,7 @@ function setScene( sceneToSet, initial, ws ){
             document.querySelector( '.wrap-' + scene ).classList.remove( 'wrap-select' );
         }
     }
-    if ( initial != true ){
+    if ( initial != true && ws != 'nows' ){
         console.log( 'WS => sending "Scene ' + sceneToSet + '"' );
         ws.send(JSON.stringify({'scene': sceneToSet}));
         goToSection( 'record' );
@@ -39,9 +39,12 @@ export function setupScenes( ws ){
         }
         document.querySelector( '.thumbnail-' + indexRename ).src = 'https://vorzeigeassets.de/videobooth/bin/thumbnails/' + customer.scenes[scene].thumbnail;
         //console.log( 'scene-' + scene, indexRename );
-        document.querySelector( '.wrap-' + scene ).onclick = function(){
-            setScene ( scene, false, ws );
-        };
+        if ( ws != 'nows' ) {
+            document.querySelector( '.wrap-' + scene ).onclick = function(){
+                setScene ( scene, false, ws );
+            };
+        }
+        
         indexRename++;
     }
     var indexRemove = Object.keys( customer.scenes ).length;
