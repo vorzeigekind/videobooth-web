@@ -7,7 +7,6 @@ import { setupScenes } from './scene.js';
 import { setupLanguages } from './language.js';
 import { startSocket } from './websocket.js';
 
-
 const queryStringLoad = window.location.search;
 const urlParamsLoad = new URLSearchParams(queryStringLoad);
 const id = urlParamsLoad.get('wsID');
