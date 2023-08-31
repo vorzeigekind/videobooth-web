@@ -11,7 +11,7 @@ export function loadVideo( id ){
     button1zu1 = button1zu1.replace( 'http://videolink1zu1', config.video.blob + '1zu1' + id + '.' + config.video.filetype + config.video.token );
     setTimeout(() => {
         var statusVideo = checkVideo( '' );
-        if ( statusVideo === 200 ){
+        if ( statusVideo == true ){
             var video = document.getElementById( 'button-video' );
             video.innerHTML = video.innerHTML.replace( 'http://videolink', config.video.blob + id + '.' + config.video.filetype + config.video.token );
             video.classList.add( 'video-accessable' );
