@@ -9,7 +9,7 @@ export function loadVideo( id ){
     video1zu1 = video1zu1.replace( 'http://videolink1zu1', config.video.blob + '1zu1' + id + '.' + config.video.filetype + config.video.token, );
     button1zu1 = button1zu1.replace( 'http://videolink1zu1', config.video.blob + '1zu1' + id + '.' + config.video.filetype + config.video.token );
     setTimeout(() => {
-        var statusVideo = checkVideo( 'hi' );
+        var statusVideo = checkVideo( '' );
         if ( statusVideo === 200 ){
             var video = document.getElementById( 'button-video' ).innerHTML;
             video = video.replace( 'http://videolink', config.video.blob + id + '.' + config.video.filetype + config.video.token );

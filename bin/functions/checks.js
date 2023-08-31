@@ -35,7 +35,7 @@ function checkText(){
     }
 }
 
-export function checkAll(){
+function checkAll(){
     setupSwitcher();
 
     var statusVideo1zu1 = checkVideo( '1zu1' );
@@ -54,4 +54,6 @@ export function checkAll(){
             startSocket( id );;
         }
     }
-};
+}
+
+export { checkVideo, checkAll };
