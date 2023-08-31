@@ -12,7 +12,6 @@ export function startSocket( webId ){
     var verified = false;
 
     setupActions( ws );
-    setupSwitcher();
 
     ws.addEventListener('open', (event) => { 
         console.log('WS => starting connection 🚀');

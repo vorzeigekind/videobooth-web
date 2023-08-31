@@ -36,6 +36,8 @@ function checkText(){
 }
 
 export function checkAll(){
+    setupSwitcher();
+
     var statusVideo1zu1 = checkVideo( '1zu1' );
     var statusText = checkText();
     //console.log( 'VIDEO STATUS => ', statusVideo1zu1, statusVideo1zu1 );
