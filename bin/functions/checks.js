@@ -4,6 +4,7 @@ import { json as config } from '../config.js';
 import { setupSwitcher, goToSection } from './section.js';
 import { loadVideo } from './video.js';
 import { startSocket } from './websocket.js';
+import { setupLanguages } from './language.js';
 
 const queryStringLoad = window.location.search;
 const urlParamsLoad = new URLSearchParams(queryStringLoad);
