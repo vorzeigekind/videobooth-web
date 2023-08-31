@@ -14,6 +14,7 @@ export const json = {
             "title-mode": "Mode",
             "text-mode": "Choose between Singleplayer (1 person) and Partymode (1-5 persons):",
             "title-singleplayer": "Singleplayer",
+            "title-partymode": "Partymode",
             "scene-0": "Data Driven",
             "scene-1": "Adventure Movie",
             "scene-2": "Byte Buster – The Movie",
