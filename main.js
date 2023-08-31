@@ -1,6 +1,6 @@
 // INITIATE CHECKS
 
-import { switchLink } from './video.js';
+import { switchLink } from './bin/functions/video.js';
 import { checkAll } from './bin/functions/checks.js';
 
 const queryStringLoad = window.location.search;
