@@ -30,6 +30,7 @@ export function startSocket( webId ){
             if (data) {
                 if (verified == true && 'disconnect' in data) {
                     console.log('ERROR => other client > terminating this instance ❌');
+                    goToSection( 'error-disconnected' );
                     ws.close();
                 }
                 if (verified == false && 'wsIDTD' in data) {

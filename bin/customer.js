@@ -39,7 +39,9 @@ export const json = {
             "title-error-no-id": "No ID",
             "text-error-no-id": "You didn't scnan an ID. Scan the QR-Code in the box!",
             "title-error-connection": "Connection Error",
-            "text-error-connection": "Can't reach server."
+            "text-error-connection": "Can't reach server.",
+            "title-error-disconnected": "Connection Closed",
+            "text-error-disconnected": "Someone else is using the box! Re-scan the QR-Code to continue."
         },
         "german": {
             "title-language": "Hallo, willkommen!",
@@ -76,7 +78,9 @@ export const json = {
             "title-error-no-id": "Keine ID",
             "text-error-no-id": "You didn't scnan an ID. Scan the QR-Code in the box!",
             "title-error-connection": "Verbindungs Fehler",
-            "text-error-connection": "Can't reach server."
+            "text-error-connection": "Can't reach server.",
+            "title-error-disconnected": "Verbindung Abgebrochen",
+            "text-error-disconnected": "Jemand anderes hat dich aus der Box geworfen! Scanne den QR-Code erneut um fortzufahren."
         }
     },
     "scenes": {
