@@ -55,6 +55,7 @@ function checkAll(){
     } else {
         if ( id == null ) {
             console.log('ERROR => no token ⁉️');
+            goToSection( 'error-no-id' );
         } else {
             startSocket( id );;
         }

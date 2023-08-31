@@ -36,6 +36,8 @@ export const json = {
             "text-text": "Your video is nearly finished. This page will reload in a few second.",
             "title-error-id": "Invalid ID",
             "text-error-id": "This ID is invalid. Simply rescan the QR-Code in the box!",
+            "title-error-no-id": "No ID",
+            "text-error-no-id": "You didn't scnan an ID. Scan the QR-Code in the box!",
             "title-error-connection": "Connection Error",
             "text-error-connection": "Can't reach server."
         },
@@ -71,6 +73,8 @@ export const json = {
             "text-text": "Your video is nearly finished. This page will reload in a few second.",
             "title-error-id": "Ungültige ID",
             "text-error-id": "This ID is invalid. Simply rescan the QR-Code in the box!",
+            "title-error-no-id": "Keine ID",
+            "text-error-no-id": "You didn't scnan an ID. Scan the QR-Code in the box!",
             "title-error-connection": "Verbindungs Fehler",
             "text-error-connection": "Can't reach server."
         }
