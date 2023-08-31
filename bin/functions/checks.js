@@ -13,24 +13,24 @@ function checkVideo( modifier ){
     var httpReq = new XMLHttpRequest();
     httpReq.open('HEAD', config.video.blob + modifier + id + '.' + config.video.filetype + config.video.token);
     httpReq.send();
-    console.log( 'VIDEO STATUS => ' httpReq.status );
-    if (httpReq.status === 200) {
+    console.log( 'VIDEO STATUS => ' + httpReq.status );
+    if ( httpReq.status === 200 ) {
         return( true );
     } else {
         return( false );
-    };
+    }
 }
 
 function checkText(){
     var httpReq = new XMLHttpRequest();
     httpReq.open('HEAD', config.video.blob + id + '.txt' + config.video.token);
     httpReq.send();
-    console.log( 'VIDEO STATUS => ' httpReq.status );
-    if (httpReq.status === 200) {
+    console.log( 'VIDEO STATUS => ' + httpReq.status );
+    if ( httpReq.status === 200 ) {
         return( true );
     } else {
         return( false );
-    };
+    }
 }
 
 export function checkAll(){
