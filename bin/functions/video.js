@@ -4,7 +4,7 @@ import { json as config } from '../config.js';
 import { checkVideo } from './checks.js';
 
 function loadVideo( id ){
-    console.log( 'LOADING VIDEO' );
+    /*console.log( 'LOADING VIDEO' );
     var video1zu1 = document.getElementById( 'player-video-1zu1' );
     var button1zu1 = document.getElementById( 'wrap-button-video-1zu1' );
     video1zu1.classList.add( 'video-accessable' );
@@ -17,11 +17,11 @@ function loadVideo( id ){
         var video = document.getElementById( 'wrap-button-video' );
         //video.innerHTML = video.innerHTML.replace( 'http://videolink', config.video.blob + id + '.' + config.video.filetype + '?' + config.video.token );
         video.classList.add( 'video-accessable' );
-    }
+    }*/
 }
 
 function switchLink( id ){
-    console.log( 'LOADING VIDEO' );
+    console.log( 'CHANGING LINKS' );
     var video1zu1 = document.getElementById( 'player-video-1zu1' );
     var button1zu1 = document.getElementById( 'wrap-button-video-1zu1' );
     var video = document.getElementById( 'wrap-button-video' );
