@@ -11,7 +11,8 @@ const id = urlParamsLoad.get('wsID');
 
 function checkVideo( modifier ){
     var httpReq = new XMLHttpRequest();
-    httpReq.open('HEAD', config.video.blob + modifier + id + '.' + config.video.filetype + '?' + config.video.token);
+    console.log( 'CHECKING STATUS => ' + config.video.blob + modifier + id + '.' + config.video.filetype + '?' + config.video.token );
+    httpReq.open('HEAD', config.video.blob + modifier + id + '.' + config.video.filetype + '?' + config.video.token );
     httpReq.send();
     console.log( 'VIDEO STATUS => ' + httpReq.status );
     if ( httpReq.status === 200 ) {
@@ -23,6 +24,7 @@ function checkVideo( modifier ){
 
 function checkText(){
     var httpReq = new XMLHttpRequest();
+    console.log( 'CHECKING STATUS => ' + config.video.blob + id + '.txt' + '?' + config.video.token );
     httpReq.open('HEAD', config.video.blob + id + '.txt' + '?' + config.video.token);
     httpReq.send();
     console.log( 'VIDEO STATUS => ' + httpReq.status );
