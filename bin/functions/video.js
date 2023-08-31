@@ -12,8 +12,8 @@ export function loadVideo( id ){
     setTimeout(() => {
         var statusVideo = checkVideo( '' );
         if ( statusVideo === 200 ){
-            var video = document.getElementById( 'button-video' ).innerHTML;
-            video = video.replace( 'http://videolink', config.video.blob + id + '.' + config.video.filetype + config.video.token );
+            var video = document.getElementById( 'button-video' );
+            video.innerHTML = video.innerHTML.replace( 'http://videolink', config.video.blob + id + '.' + config.video.filetype + config.video.token );
             video.classList.add( 'video-accessable' );
         }
     }, 60000);
