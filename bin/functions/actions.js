@@ -41,4 +41,5 @@ export function setupActions( ws ){
     setupRecord( ws );
     setupBack();
     setupForward();
+    setupCheck();
 };
