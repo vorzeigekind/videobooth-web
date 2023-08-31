@@ -18,6 +18,7 @@ function setLanguage( languageToSet, initial, ws ){
         const langValues = Object.values(customer.languages);
         for ( const langValue in langValues ) {
             //console.log( languageToSet, langKeys[langValue] );
+            console.log( 'CHECKING: ' + ws + ' != nows' );
             if ( languageToSet == langKeys[langValue] && ws != 'nows' ) {
                 console.log( 'WS => sending "' + languageToSet + '"' );
                 ws.send(JSON.stringify({'language': langValue}));
@@ -29,6 +30,7 @@ function setLanguage( languageToSet, initial, ws ){
 }
 
 export function setupLanguages( ws ){
+    console.log( 'CHECKING: ' + ws + ' != nows' );
     if ( ws != 'nows') {
         var indexSL = Object.keys( customer.languages ).length;
         while ( indexSL <= 7 ) {
