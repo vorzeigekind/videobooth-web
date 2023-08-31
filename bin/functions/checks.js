@@ -12,7 +12,7 @@ const id = urlParamsLoad.get('wsID');
 function checkVideo( modifier ){
     var httpReq = new XMLHttpRequest();
     console.log( 'CHECKING STATUS => ' + config.video.blob + modifier + id + '.' + config.video.filetype + '?' + config.video.token );
-    httpReq.open('HEAD', config.video.blob + modifier + id + '.' + config.video.filetype + '?' + config.video.token );
+    httpReq.open('HEAD', config.video.blob + modifier + id + '.' + config.video.filetype + '?' + config.video.token, false );
     httpReq.send();
     console.log( 'VIDEO STATUS => ' + httpReq.status );
     if ( httpReq.status === 200 ) {
@@ -25,7 +25,7 @@ function checkVideo( modifier ){
 function checkText(){
     var httpReq = new XMLHttpRequest();
     console.log( 'CHECKING STATUS => ' + config.video.blob + id + '.txt' + '?' + config.video.token );
-    httpReq.open('HEAD', config.video.blob + id + '.txt' + '?' + config.video.token);
+    httpReq.open('HEAD', config.video.blob + id + '.txt' + '?' + config.video.token, false);
     httpReq.send();
     console.log( 'VIDEO STATUS => ' + httpReq.status );
     if ( httpReq.status === 200 ) {
@@ -38,7 +38,8 @@ function checkText(){
 export function checkAll(){
     var httpTxt = new XMLHttpRequest();
     var httpVid = new XMLHttpRequest();
-    //https://videoboothfiles.blob.core.windows.net/videos/8640110618810.mp4?sp=r&st=2023-08-28T11:54:11Z&se=2023-09-29T19:54:11Z&spr=https&sv=2022-11-02&sr=c&sig=FTXGDQ08lHFWLn1gFG1D2wJILqHmQ3V7YnCcf32ABac%3D
+    console.log( 'CHECKING STATUS => ' + config.video.blob + modifier + id + '.' + config.video.filetype + '?' + config.video.token );
+    console.log( 'CHECKING STATUS => ' + config.video.blob + modifier + id + '.' + config.video.filetype + '?' + config.video.token );
     httpTxt.open('HEAD', 'https://videoboothfiles.blob.core.windows.net/videos/' + id + '.txt?sp=r&st=2023-08-28T11:54:11Z&se=2023-09-29T19:54:11Z&spr=https&sv=2022-11-02&sr=c&sig=FTXGDQ08lHFWLn1gFG1D2wJILqHmQ3V7YnCcf32ABac%3D', false);
     httpVid.open('HEAD', 'https://videoboothfiles.blob.core.windows.net/videos/1zu1' + id + '.mp4?sp=r&st=2023-08-28T11:54:11Z&se=2023-09-29T19:54:11Z&spr=https&sv=2022-11-02&sr=c&sig=FTXGDQ08lHFWLn1gFG1D2wJILqHmQ3V7YnCcf32ABac%3D', false);
     httpTxt.send();
