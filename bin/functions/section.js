@@ -13,6 +13,7 @@ function goToSection( sectionToGo ){
             currSection = parseInt(Object.keys(config.sections)[section]);
             //console.log( currSection );
         } else {
+            console.log( 'REMOVING ==> section-select from .section-' + Object.values(config.sections)[section] );
             document.querySelector( '.section-' + Object.values(config.sections)[section] ).classList.remove( 'section-select' );
         }
     }
