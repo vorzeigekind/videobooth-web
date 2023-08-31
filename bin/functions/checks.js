@@ -49,13 +49,16 @@ function checkAll(){
     if ( statusVideo1zu1 == true ){
         goToSection( 'video' );
         loadVideo( id );
+        setupLanguages( 'nows' );
     } else if ( statusText == true ){
         goToSection( 'text' );
+        setupLanguages( 'nows' );
         setTimeout(() => { location.reload(); }, 10000);
     } else {
         if ( id == null ) {
             console.log('ERROR => no token ⁉️');
             goToSection( 'error-no-id' );
+            setupLanguages( 'nows' );
         } else {
             startSocket( id );;
         }

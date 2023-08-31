@@ -18,7 +18,7 @@ function setLanguage( languageToSet, initial, ws ){
         const langValues = Object.values(customer.languages);
         for ( const langValue in langValues ) {
             //console.log( languageToSet, langKeys[langValue] );
-            if ( languageToSet == langKeys[langValue] ) {
+            if ( languageToSet == langKeys[langValue] && ws != 'nows' ) {
                 console.log( 'WS => sending "' + languageToSet + '"' );
                 ws.send(JSON.stringify({'language': langValue}));
             }
