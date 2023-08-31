@@ -14,6 +14,12 @@ function setupRecord( ws ){
     };
 }
 
+function setupCheck( ws ){
+    document.querySelector( '#wrap-button-check' ).onclick = function(){
+        location.reload();
+    };
+}
+
 function setupBack(){
     document.querySelector( '#wrap-button-back-mode' ).onclick = function(){
         goBack();
