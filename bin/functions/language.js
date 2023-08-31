@@ -29,19 +29,22 @@ function setLanguage( languageToSet, initial, ws ){
 }
 
 export function setupLanguages( ws ){
-    var indexSL = Object.keys( customer.languages ).length;
-    while ( indexSL <= 7 ) {
-        document.querySelector( '#wrap-button-language-' + indexSL ).remove();
-        indexSL++;
+    if ( ws != 'nows') {
+        var indexSL = Object.keys( customer.languages ).length;
+        while ( indexSL <= 7 ) {
+            document.querySelector( '#wrap-button-language-' + indexSL ).remove();
+            indexSL++;
+        }
+        var indexBL = 0;
+        for ( const button in customer.languages ) {
+            //console.log('#button-language-' + indexBL, button );
+            document.querySelector( '#wrap-button-language-' + indexBL ).onclick = function(){
+                setLanguage ( button, false, ws );
+            };
+            indexBL++;
+        }
     }
-    var indexBL = 0;
-    for ( const button in customer.languages ) {
-        //console.log('#button-language-' + indexBL, button );
-        document.querySelector( '#wrap-button-language-' + indexBL ).onclick = function(){
-            setLanguage ( button, false, ws );
-        };
-        indexBL++;
-    }
+    
     //console.log( 'INITIALISING LANGUAGE' );
     setLanguage( 'english', true, ws );
 };
