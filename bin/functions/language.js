@@ -23,7 +23,7 @@ function setLanguage( languageToSet, initial, ws ){
                 ws.send(JSON.stringify({'language': langValue}));
             }
         }
-        document.querySelector( '#button-forward-language' ).classList.add( 'button-forward-selected' );
+        document.querySelector( '#wrap-button-forward-language' ).classList.add( 'wrap-button-forward-selected' );
         //goToSection( 'mode' ); using button forward right now
     }
 }
@@ -31,13 +31,13 @@ function setLanguage( languageToSet, initial, ws ){
 export function setupLanguages( ws ){
     var indexSL = Object.keys( customer.languages ).length;
     while ( indexSL <= 7 ) {
-        document.querySelector( '#button-language-' + indexSL ).remove();
+        document.querySelector( '#wrap-button-language-' + indexSL ).remove();
         indexSL++;
     }
     var indexBL = 0;
     for ( const button in customer.languages ) {
         //console.log('#button-language-' + indexBL, button );
-        document.querySelector( '#button-language-' + indexBL ).onclick = function(){
+        document.querySelector( '#wrap-button-language-' + indexBL ).onclick = function(){
             setLanguage ( button, false, ws );
         };
         indexBL++;

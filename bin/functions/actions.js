@@ -6,7 +6,7 @@ import { setupScenes } from './scene.js';
 import { goToSection, goBack, goForward } from './section.js';
 
 function setupRecord( ws ){
-    document.querySelector( '#button-record' ).onclick = function(){
+    document.querySelector( '#wrap-button-record' ).onclick = function(){
         goToSection( 'recording' );
         console.log( 'WS => sending "record"' );
         ws.send(indexify('record'));
@@ -14,16 +14,16 @@ function setupRecord( ws ){
 }
 
 function setupBack(){
-    document.querySelector( '#button-back-mode' ).onclick = function(){
+    document.querySelector( '#wrap-button-back-mode' ).onclick = function(){
         goBack();
     };
-    document.querySelector( '#button-back-record' ).onclick = function(){
+    document.querySelector( '#wrap-button-back-record' ).onclick = function(){
         goBack();
     };
 }
 
 function setupForward(){
-    document.querySelector( '#button-forward-language' ).onclick = function(){
+    document.querySelector( '#wrap-button-forward-language' ).onclick = function(){
         goForward();
     };
 }
