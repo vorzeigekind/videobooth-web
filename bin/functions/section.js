@@ -37,6 +37,7 @@ function goForward(){
 
 function setupSwitcher(){
     for ( const section in config.sections ) {
+        console.log( 'ADDING ==> section-select from .section-' + Object.values(config.sections)[section] + ' to #section-' + Object.values(config.sections)[section] );
         document.querySelector( '#section-' + Object.values(config.sections)[section] ).classList.add( 'section-' + Object.values(config.sections)[section] );
     }
 }
