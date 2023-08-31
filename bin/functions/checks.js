@@ -26,7 +26,7 @@ function checkText(){
 export function checkAll(){
     var statusVideo1zu1 = checkVideo( '1zu1' );
     var statusText = checkText();
-    //console.log( statusVideo1zu1, statusVideo1zu1 );
+    console.log( 'VIDEO STATUS => ', statusVideo1zu1, statusVideo1zu1 );
     if ( statusVideo1zu1 === 200 ){
         goToSection( 'video' );
         loadVideo( id );
