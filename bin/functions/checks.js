@@ -1,7 +1,7 @@
 // FILE + TOKEN CHECK
 
 import { json as config } from '../config.js';
-import { goToSection } from './section.js';
+import { setupSwitcher, goToSection } from './section.js';
 import { loadVideo } from './video.js';
 import { startSocket } from './websocket.js';
 

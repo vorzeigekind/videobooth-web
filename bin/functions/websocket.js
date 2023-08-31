@@ -3,7 +3,7 @@
 import { json as config } from '../config.js';  // import general settings
 import { indexify } from './indexer.js'; // import JSON indexer function
 import { setupActions } from './actions.js'; // import actions function
-import { setupSwitcher, goToSection } from './section.js'; // import section switcher function
+import { goToSection } from './section.js'; // import section switcher function
 
 const server = 'wss://' + config.websocket.server + ':' + config.websocket.port; // make server url from settings
 
