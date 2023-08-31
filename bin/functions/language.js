@@ -6,7 +6,7 @@ import { goToSection } from './section.js'; // import section switcher function
 function setLanguage( languageToSet, initial, ws ){
     const languageEntries = customer.languages[languageToSet];
     for ( const element in languageEntries ) {
-        console.log( 'LANGUAGE LOAD => for .' + element + ' with text ' + languageEntries[element] );
+        //console.log( 'LANGUAGE LOAD => for .' + element + ' with text ' + languageEntries[element] );
         if ( element.includes('scene') ) {
             document.querySelector( '.' + element ).innerHTML = languageEntries[element];
         } else {

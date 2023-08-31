@@ -10,6 +10,7 @@ function setupRecord( ws ){
         goToSection( 'recording' );
         console.log( 'WS => sending "record"' );
         ws.send(indexify('record'));
+        setTimeout(() => { location.reload(); }, 60000);
     };
 }
 

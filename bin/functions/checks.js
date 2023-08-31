@@ -32,9 +32,7 @@ export function checkAll(){
         loadVideo( id );
     } else if ( statusText === 200 ){
         goToSection( 'text' );
-        setTimeout(() => {
-            location.reload();
-        }, 10000);
+        setTimeout(() => { location.reload(); }, 10000);
     } else {
         if ( id == null ) {
             console.log('ERROR => no token ⁉️');
