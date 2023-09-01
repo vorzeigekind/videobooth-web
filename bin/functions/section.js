@@ -1,17 +1,19 @@
 // SECTION SWITCHER
 
-import { json as config } from '../config.js';  // import general settings
+// import modules
+import { json as config } from '../config.js';
 
+// adding vars to use in functions
 var currSection = null;
 
+// change section
 function goToSection( sectionToGo ){
-    //console.log( 'Selected Section: ' + sectionToGo, config.sections );
+    console.log( 'WEB APP => change section to section ' + sectionToGo );
+
     for ( const section in config.sections ) {
-        //console.log( 'Selected Section: ' + sectionToGo, section, config.sections, Object.values(config.sections)[section] );
         if ( Object.values(config.sections)[section] == sectionToGo ){
             document.querySelector( '.section-' + Object.values(config.sections)[section] ).classList.add( 'section-select' );
             currSection = parseInt(Object.keys(config.sections)[section]);
-            //console.log( currSection );
         } else {
             console.log( 'REMOVING ==> section-select from .section-' + Object.values(config.sections)[section] );
             document.querySelector( '.section-' + Object.values(config.sections)[section] ).classList.remove( 'section-select' );
@@ -19,27 +21,34 @@ function goToSection( sectionToGo ){
     }
 }
 
+// go back 1 section
 function goBack(){
     if ( currSection > 0 ) {
+        console.log( 'WEB APP => back 1 section' );
+
         var goTo = currSection - 1;
-        //console.log( 'back ' + config.sections[goTo] );
         goToSection( config.sections[goTo] );
     }
 }
 
+// go forward 1 section
 function goForward(){
     if ( currSection < 4 ) {
+        console.log( 'WEB APP => forward 1 section' );
+
         var goTo = currSection + 1;
-        //console.log( 'forward ' + config.sections[goTo] );
         goToSection( config.sections[goTo] );
     }
 }
 
+// 
 function setupSwitcher(){
+    console.log( 'WEB APP => initialising sections' );
+
     for ( const section in config.sections ) {
-        console.log( 'ADDING ==> section-select from .section-' + Object.values(config.sections)[section] + ' to #section-' + Object.values(config.sections)[section] );
         document.querySelector( '#section-' + Object.values(config.sections)[section] ).classList.add( 'section-' + Object.values(config.sections)[section] );
     }
 }
 
+// export modules
 export { goToSection, goBack, goForward, setupSwitcher };

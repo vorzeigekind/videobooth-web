@@ -1,4 +1,14 @@
-// CUSTOMER SETTINGS
+// CUSTOMER/PROJECT SETTINGS
+
+//      CHANGING SETTINGS:
+//      => don't change the key (left side) of each row!
+//      => change the value (right side)
+//          -> this will edit the corresponding text in the web app
+//      => you can add up to 8 languages
+//          -> the web app defaults to the 1. language
+//      => you can add up to 8 scenes (starting with index 0!)
+//          -> scenes need: a mode (singleplayer/partymode) and a thumbnail
+//              > look out for Upper-/Lowercase in the filename!
 
 export const json = {
     "customer": "conterra",
@@ -7,8 +17,8 @@ export const json = {
         "english": {
             "title-language": "Hello & Welcome",
             "text-language": "Get ready for some action and choose a language.",
-            "button-language-0": "English",
-            "button-language-1": "Deutsch",
+            "button-language-0": "English 🇬🇧",
+            "button-language-1": "Deutsch 🇩🇪",
             "button-forward-language": "Next",
             "button-back-mode": "Back",
             "title-mode": "Mode",
@@ -26,10 +36,10 @@ export const json = {
             "text-record": "Push the record button and put your phone away.",
             "button-record": "Record",
             "title-recording": "Download",
-            "text-recording": "Done with your recording?\n You can download your masterpiece here:",
+            "text-recording": "Done with your recording?<br />You can download your masterpiece here:",
             "button-check": "Open Video",
             "title-video": "Your Video",
-            "text-video": "Watch online or download.\n You can post your video using #Peak23VideoAward",
+            "text-video": "Watch online or download.<br />You can post your video using #Peak23VideoAward",
             "button-video-1zu1": "1:1 format",
             "button-video": "16:9 format",
             "title-text": "So close",
@@ -45,9 +55,9 @@ export const json = {
         },
         "german": {
             "title-language": "Hallo & Willkommen",
-            "text-language": "Mach dich bereit für jede Menge Action!\n Wähle deine Sprache:",
-            "button-language-0": "English",
-            "button-language-1": "Deutsch",
+            "text-language": "Mach dich bereit für jede Menge Action!<br />Wähle deine Sprache:",
+            "button-language-0": "English 🇬🇧",
+            "button-language-1": "Deutsch 🇩🇪",
             "button-forward-language": "Weiter",
             "button-back-mode": "Zurück",
             "title-mode": "Modus",
@@ -65,10 +75,10 @@ export const json = {
             "text-record": "Drücke den Aufnahme-Button und stecke dein Handy weg.",
             "button-record": "Aufnehmen",
             "title-recording": "Download",
-            "text-recording": "Fertig mit der Aufnahme?\n Du kannst dein Meisterwerk hier herunterladen:",
+            "text-recording": "Fertig mit der Aufnahme?<br />Du kannst dein Meisterwerk hier herunterladen:",
             "button-check": "zum Video",
             "title-video": "Dein Video",
-            "text-video": "Jetzt online anschauen oder herunterladen.\n Poste dein Video gern unter dem #Peak23VideoAward",
+            "text-video": "Jetzt online anschauen oder herunterladen.<br />Poste dein Video gern unter dem #Peak23VideoAward",
             "button-video-1zu1": "1:1 Format",
             "button-video": "16:9 Format",
             "title-text": "Fast fertig",

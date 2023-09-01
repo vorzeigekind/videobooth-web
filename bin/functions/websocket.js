@@ -1,20 +1,25 @@
 // WEB SOCKET
 
-import { json as config } from '../config.js';  // import general settings
-import { indexify } from './indexer.js'; // import JSON indexer function
-import { setupActions } from './actions.js'; // import actions function
-import { goToSection } from './section.js'; // import section switcher function
+// import modules
+import { json as config } from '../config.js';
+import { indexify } from './indexer.js';
+import { setupActions } from './actions.js';
+import { goToSection } from './section.js';
 
-const server = 'wss://' + config.websocket.server + ':' + config.websocket.port; // make server url from settings
+// setting vars for functions
+const server = 'wss://' + config.websocket.server + ':' + config.websocket.port;
 
+// start websocket
 export function startSocket( webId ){
+    console.log( 'WEB APP => initialising connection ✨' );
+
     let ws = new WebSocket( server );
     var verified = false;
 
     setupActions( ws );
 
     ws.addEventListener('open', (event) => { 
-        console.log('WS => starting connection 🚀');
+        console.log('WEB APP => starting connection 🚀');
         ws.send('pong');
         ws.send(indexify('usercon'));
     });
@@ -22,30 +27,30 @@ export function startSocket( webId ){
     ws.addEventListener('message', (message) => { 
         if (message && message.data) {
             if (message.data == 'ping') { 
-                console.log('WS => received ping 🏓 returning pong ');
+                console.log('WEB APP => received ping 🏓 returning pong ');
                 ws.send('pong');
                 return;
             }
             let data = JSON.parse(message.data);
             if (data) {
                 if (verified == true && 'disconnect' in data) {
-                    console.log('ERROR => other client > terminating this instance ❌');
+                    console.log('WEB APP => ERROR => other client > terminating this instance ❌');
                     goToSection( 'error-disconnected' );
                     ws.close();
                 }
                 if (verified == false && 'wsIDTD' in data) {
                     const touchId = data['wsIDTD'];
-                    console.log('WS => client token = ' + webId);
-                    console.log('WS => received token = ' + touchId);
+                    console.log('WEB APP => client token = ' + webId);
+                    console.log('WEB APP => received token = ' + touchId);
                     if (webId == touchId) {
-                        console.log('WS => token accepted > connection established 🎉');
+                        console.log('WEB APP => token accepted > connection established 🎉');
                         goToSection( 'language' );
                         ws.send(indexify('verifieduser'));
-                        console.log('WS => terminating other clients 🔫');
+                        console.log('WEB APP => terminating other clients 🔫');
                         setTimeout(() => { ws.send(indexify('disconnect')); }, 100);
                         verified = true;
                     } else if (webId != touchId) { 
-                        console.log('ERROR => token denied 🚧');
+                        console.log('WEB APP => ERROR => token denied 🚧');
                         goToSection( 'error-id' );
                         ws.close();
                     }
@@ -56,10 +61,10 @@ export function startSocket( webId ){
 
     ws.addEventListener('error', (error) => {
         goToSection( 'error-connection' );
-        console.log('ERROR => ', error);
+        console.log('WEB APP => ERROR => ', error);
     });
 
     ws.addEventListener('close', (event) => {
-        console.log('WS => closing connection');
+        console.log('WEB APP => closing connection 🫡');
     });
 };

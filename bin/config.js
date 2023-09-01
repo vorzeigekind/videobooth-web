@@ -1,5 +1,8 @@
 // GENERAL SETTINGS
 
+//      DON'T CHANGE BETWEEN PROJECTS!
+//      Only edit if you know what you are doing
+
 export const json = {
     "websocket": {
         "server": "ws.vorzeigeassets.de",
