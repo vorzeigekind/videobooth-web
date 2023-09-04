@@ -1,7 +1,7 @@
 // INITIATE WEB APP
 
-import { React } from "./bin/react/react.production.min.js";
-import { ReactDOM } from "./bin/react/react-dom.production.min.js";
+//import { React } from "./bin/react/react.production.min.js";
+//import { ReactDOM } from "./bin/react/react-dom.production.min.js";
 
 const doFetchDownload = () => {
     fetch("https://jsonplaceholder.typicode.com/todos/1")
