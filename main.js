@@ -3,33 +3,26 @@
 import { React } from "./bin/react/react.production.min.js";
 import { ReactDOM } from "./bin/react/react-dom.production.min.js";
 
-function App() {
-    const doFetchDownload = () => {
-        fetch("https://jsonplaceholder.typicode.com/todos/1")
-        .then(resp => resp.blob())
-        .then(blob => {
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement("a");
-            a.style.display = "none";
-            a.href = url;
-            // the filename you want
-            a.download = "todo-1.json";
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(url);
-            alert("your file has downloaded!"); // or you know, something with better UX...
-        })
-        .catch(() => alert("oh no!"));
-    };
-    return (
-        <div className="App">
-            <button onClick={doFetchDownload}>Do Fetch Download</button>
-        </div>
-    );
-}
+const doFetchDownload = () => {
+    fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then(resp => resp.blob())
+    .then(blob => {
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.style.display = "none";
+        a.href = url;
+        // the filename you want
+        a.download = "todo-1.json";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        alert("your file has downloaded!"); // or you know, something with better UX...
+    })
+    .catch(() => alert("oh no!"));
+};
+
   
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
+
 
 // import modules
 //import { switchLink } from './bin/functions/video.js';
