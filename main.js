@@ -3,7 +3,7 @@
 //import { React } from "./bin/react/react.production.min.js";
 //import { ReactDOM } from "./bin/react/react-dom.production.min.js";
 
-const doFetchDownload = () => {
+document.querySelector( '#button-downloader' ).onclick = function(){
     fetch("https://jsonplaceholder.typicode.com/todos/1")
     .then(resp => resp.blob())
     .then(blob => {
