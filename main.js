@@ -3,8 +3,10 @@
 //import { React } from "./bin/react/react.production.min.js";
 //import { ReactDOM } from "./bin/react/react-dom.production.min.js";
 
+// https://videoboothfiles.blob.core.windows.net/videos/1zu18647161806378.mp4
+
 document.querySelector( '#button-downloader' ).onclick = function(){
-    fetch("https://jsonplaceholder.typicode.com/todos/1")
+    fetch("https://videoboothfiles.blob.core.windows.net/videos/1zu18647161806378.mp4")
     .then(resp => resp.blob())
     .then(blob => {
         const url = window.URL.createObjectURL(blob);
@@ -12,7 +14,7 @@ document.querySelector( '#button-downloader' ).onclick = function(){
         a.style.display = "none";
         a.href = url;
         // the filename you want
-        a.download = "todo-1.json";
+        a.download = "video.mp4";
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
