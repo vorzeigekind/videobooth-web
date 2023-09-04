@@ -24,7 +24,7 @@ document.querySelector( '#button-downloader' ).onclick = function(){
 import { json as config } from '../config.js';
 import { checkVideo } from './checks.js';
 
-function addButtons(){
+function addButtons( id ){
     document.querySelector( '#wrap-button-video-1zu1' ).onclick = function(){
         fetch(config.video.blob + '1zu1' + id + '.' + config.video.filetype)
         .then(resp => resp.blob())
@@ -81,7 +81,6 @@ function loadVideo( id ){
         //video.innerHTML = video.innerHTML.replace( 'http://videolink', config.video.blob + id + '.' + config.video.filetype + '?' + config.video.token );
         //video.classList.add( 'video-accessable' );
     } */
-    addButtons();
 }
 
 // change video urls
@@ -97,6 +96,8 @@ function switchLink( id ){
     //video1zu1.innerHTML = video1zu1.innerHTML.replace( 'https://videoboothfiles/', config.video.blob + '1zu1' + id + '.' + config.video.filetype + '?' + config.video.token );
     //button1zu1.innerHTML = button1zu1.innerHTML.replace( 'http://videolink1zu1', config.video.blob + '1zu1' + id + '.' + config.video.filetype + '?' + config.video.token );
     //video.innerHTML = video.innerHTML.replace( 'http://videolink', config.video.blob + id + '.' + config.video.filetype + '?' + config.video.token );
+    
+    addButtons( id );
 }
 
 // export modules
