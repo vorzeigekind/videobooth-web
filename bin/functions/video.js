@@ -43,7 +43,7 @@ function addButtons( id ){
         .catch(() => alert("oh no!"));
     };
     document.querySelector( '#wrap-button-video' ).onclick = function(){
-        fetch(config.video.blob + '1zu1' + id + '.' + config.video.filetype)
+        fetch(config.video.blob + id + '.' + config.video.filetype)
         .then(resp => resp.blob())
         .then(blob => {
             const url = window.URL.createObjectURL(blob);
