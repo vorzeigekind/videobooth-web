@@ -38,7 +38,7 @@ function addButtons( id ){
             document.body.appendChild(a);
             a.click();
             window.URL.revokeObjectURL(url);
-            alert("File is ready to download!"); // or you know, something with better UX...
+            alert("Your download in 1:1 is ready!"); // or you know, something with better UX...
         })
         .catch(() => alert("oh no!"));
     };
@@ -55,7 +55,7 @@ function addButtons( id ){
             document.body.appendChild(a);
             a.click();
             window.URL.revokeObjectURL(url);
-            alert("File is ready to download!"); // or you know, something with better UX...
+            alert("Your download in 16:9 is ready!"); // or you know, something with better UX...
         })
         .catch(() => alert("oh no!"));
     };
