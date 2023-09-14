@@ -2,7 +2,7 @@
 
 // import modules
 import { json as config } from '../config.js';
-import { setupSwitcher, goToSection } from './section.js';
+import { setupSwitcher, goToSection, goToLanding } from './section.js';
 import { loadVideo } from './video.js';
 import { setupScenes } from './scene.js';
 import { setupLanguages } from './language.js';
@@ -74,9 +74,11 @@ function checkAll(){
         if ( id == null ) {
             console.log( 'WEB APP => ERROR => no token ⁉️' );
 
-            goToSection( 'error-no-id' );
-            setupScenes( 'nows' );
-            setupLanguages( 'nows' );
+            goToSection( 'loading' );
+            goToLanding();
+            //goToSection( 'error-no-id' );
+            //setupScenes( 'nows' );
+            //setupLanguages( 'nows' );
         } else {
             startSocket( id );;
         }

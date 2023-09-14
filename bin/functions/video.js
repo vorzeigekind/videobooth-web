@@ -1,25 +1,5 @@
 // VIDEO LOADER
 
-/*
-document.querySelector( '#button-downloader' ).onclick = function(){
-    fetch("https://videoboothfiles.blob.core.windows.net/videos/1zu18647161806378.mp4")
-    .then(resp => resp.blob())
-    .then(blob => {
-        const url = window.URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.style.display = "none";
-        a.href = url;
-        // the filename you want
-        a.download = "video.mp4";
-        document.body.appendChild(a);
-        a.click();
-        window.URL.revokeObjectURL(url);
-        alert("your file has downloaded!"); // or you know, something with better UX...
-    })
-    .catch(() => alert("oh no!"));
-};
-*/
-
 // import modules
 import { json as config } from '../config.js';
 import { checkVideo } from './checks.js';

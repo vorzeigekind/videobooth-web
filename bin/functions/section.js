@@ -21,6 +21,10 @@ function goToSection( sectionToGo ){
     }
 }
 
+function goToLanding(){
+    window.open(config.landing-page-url, "_self");
+}
+
 // go back 1 section
 function goBack(){
     if ( currSection > 0 ) {
@@ -51,4 +55,4 @@ function setupSwitcher(){
 }
 
 // export modules
-export { goToSection, goBack, goForward, setupSwitcher };
+export { goToSection, goToLanding, goBack, goForward, setupSwitcher };
