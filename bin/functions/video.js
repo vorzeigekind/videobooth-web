@@ -7,10 +7,10 @@ import { goToSection } from './section.js';
 
 function addButtons( id ){
     document.querySelector( '#wrap-button-video-1zu1' ).onclick = function(){
+        goToSection( 'loading' );
         fetch(config.video.blob + '1zu1' + id + '.' + config.video.filetype)
         .then(resp => resp.blob())
         .then(blob => {
-            goToSection( 'loading' );
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.style.display = "none";
@@ -20,15 +20,15 @@ function addButtons( id ){
             a.click();
             window.URL.revokeObjectURL(url);
             //alert("Your download in 1:1 is ready!"); // or you know, something with better UX...
-            goToSection( 'video' );
         })
         .catch(() => alert("Error downloading!"));
+        goToSection( 'video' );
     };
     document.querySelector( '#wrap-button-video' ).onclick = function(){
+        goToSection( 'loading' );
         fetch(config.video.blob + id + '.' + config.video.filetype)
         .then(resp => resp.blob())
         .then(blob => {
-            goToSection( 'loading' );
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.style.display = "none";
@@ -38,9 +38,9 @@ function addButtons( id ){
             a.click();
             window.URL.revokeObjectURL(url);
             //alert("Your download in 16:9 is ready!"); // or you know, something with better UX...
-            goToSection( 'video' );
         })
         .catch(() => alert("Error downloading!"));
+        goToSection( 'video' );
     };
 }
 
