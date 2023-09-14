@@ -3,22 +3,25 @@
 // import modules
 import { json as config } from '../config.js';
 import { checkVideo } from './checks.js';
+import { goToSection } from './section.js';
 
 function addButtons( id ){
     document.querySelector( '#wrap-button-video-1zu1' ).onclick = function(){
         fetch(config.video.blob + '1zu1' + id + '.' + config.video.filetype)
         .then(resp => resp.blob())
         .then(blob => {
+            goToSection( 'loading' );
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.style.display = "none";
             a.href = url;
             // the filename you want
-            a.download = "1zu1video.mp4";
+            a.download = id + "-1zu1.mp4";
             document.body.appendChild(a);
             a.click();
             window.URL.revokeObjectURL(url);
-            alert("Your download in 1:1 is ready!"); // or you know, something with better UX...
+            //alert("Your download in 1:1 is ready!"); // or you know, something with better UX...
+            goToSection( 'video' );
         })
         .catch(() => alert("oh no!"));
     };
@@ -26,16 +29,18 @@ function addButtons( id ){
         fetch(config.video.blob + id + '.' + config.video.filetype)
         .then(resp => resp.blob())
         .then(blob => {
+            goToSection( 'loading' );
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement("a");
             a.style.display = "none";
             a.href = url;
             // the filename you want
-            a.download = "video.mp4";
+            a.download = id + ".mp4";
             document.body.appendChild(a);
             a.click();
             window.URL.revokeObjectURL(url);
-            alert("Your download in 16:9 is ready!"); // or you know, something with better UX...
+            //alert("Your download in 16:9 is ready!"); // or you know, something with better UX...
+            goToSection( 'video' );
         })
         .catch(() => alert("oh no!"));
     };
