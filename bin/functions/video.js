@@ -20,9 +20,12 @@ function addButtons( id ){
             a.click();
             window.URL.revokeObjectURL(url);
             //alert("Your download in 1:1 is ready!"); // or you know, something with better UX...
+            goToSection( 'video' );
         })
-        .catch(() => alert("Error downloading!"));
-        goToSection( 'video' );
+        .catch(() => {
+            alert("Error downloading!");
+            goToSection( 'video' );
+        });
     };
     document.querySelector( '#wrap-button-video' ).onclick = function(){
         goToSection( 'loading' );
@@ -38,9 +41,12 @@ function addButtons( id ){
             a.click();
             window.URL.revokeObjectURL(url);
             //alert("Your download in 16:9 is ready!"); // or you know, something with better UX...
+            goToSection( 'video' );
         })
-        .catch(() => alert("Error downloading!"));
-        goToSection( 'video' );
+        .catch(() => {
+            alert("Error downloading!");
+            goToSection( 'video' );
+        });
     };
 }
 
