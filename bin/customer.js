@@ -15,6 +15,7 @@ export const json = {
     "event": "FME-Days 2023",
     "languages": {
         "english": {
+            "title-loading-video": "Downloading your video...",
             "title-language": "Hello & Welcome",
             "text-language": "Get ready for some action and choose a language.",
             "button-language-0": "English 🇬🇧",
@@ -54,6 +55,7 @@ export const json = {
             "text-error-disconnected": "Someone else is using the box! Rescan the QR code to continue."
         },
         "german": {
+            "title-loading-video": "Video wird geladen...",
             "title-language": "Hallo & Willkommen",
             "text-language": "Mach dich bereit für jede Menge Action!<br />Wähle deine Sprache:",
             "button-language-0": "English 🇬🇧",

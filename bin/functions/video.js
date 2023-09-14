@@ -7,7 +7,7 @@ import { goToSection } from './section.js';
 
 function addButtons( id ){
     document.querySelector( '#wrap-button-video-1zu1' ).onclick = function(){
-        goToSection( 'loading' );
+        goToSection( 'loading-video' );
         fetch(config.video.blob + '1zu1' + id + '.' + config.video.filetype)
         .then(resp => resp.blob())
         .then(blob => {
@@ -28,7 +28,7 @@ function addButtons( id ){
         });
     };
     document.querySelector( '#wrap-button-video' ).onclick = function(){
-        goToSection( 'loading' );
+        goToSection( 'loading-video' );
         fetch(config.video.blob + id + '.' + config.video.filetype)
         .then(resp => resp.blob())
         .then(blob => {
