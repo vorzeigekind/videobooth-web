@@ -39,7 +39,7 @@ export function setupScenes( ws ){
             document.querySelector( '#wrap-' + indexRename + '-singleplayer' ).remove();
         }
         //document.querySelector( '.thumbnail-' + indexRename ).src = 'https://vorzeigeassets.de/videobooth/bin/thumbnails/' + customer.scenes[scene].thumbnail;
-        document.querySelector( '.thumbnail-' + indexRename ).src = '../lib/' + customer.path + '/' + customer.scenes[scene].thumbnail;
+        document.querySelector( '.thumbnail-' + indexRename ).src = '../lib/' + customer.path + '/thumbnails/' + customer.scenes[scene].thumbnail;
 
         if ( ws != 'nows' ) {
             document.querySelector( '.wrap-' + scene ).onclick = function(){
