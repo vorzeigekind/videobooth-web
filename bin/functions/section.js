@@ -22,7 +22,7 @@ function goToSection( sectionToGo ){
 }
 
 function goToLanding(){
-    window.open(config.landing-page-url, "_self");
+    window.open(config.landing, "_self");
 }
 
 // go back 1 section

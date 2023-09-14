@@ -14,6 +14,6 @@ export const json = {
         "filetype": "mp4"
     },
     "sections": [ "loading", "language", "mode", "record", "recording", "video", "text", "error-connection", "error-id", "error-no-id", "error-disconnected" ],
-    "landing-page-url": "https://videobooth.vorzeigekind.de",
-    "app-url": "https://videobooth.vorzeigekind.de"
+    "landing": "https://videobooth.vorzeigekind.de",
+    "app": "https://videobooth.vorzeigekind.de"
 };
