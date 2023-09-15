@@ -1,6 +1,6 @@
 // CUSTOMER/PROJECT SETTINGS
 
-// change this to file of event/customer
-import { json as customer } from './lib/conterra-fme-2023/conterra-fme-2023.js';
+//      => change this to file of event/customer
+import { json as customer } from './lib/diwodo-2023/settings.js';
 
 export const json = customer;

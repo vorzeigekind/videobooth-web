@@ -10,18 +10,17 @@ import { goToSection } from './section.js';
 const server = 'wss://' + config.websocket.server + ':' + config.websocket.port;
 
 // start websocket
-export function startSocket( webId ){
+export function startSocket( currLang, webId ){
     console.log( 'WEB APP => initialising connection ✨' );
 
     let ws = new WebSocket( server );
     var verified = false;
 
-    setupActions( ws );
-
     ws.addEventListener('open', (event) => { 
         console.log('WEB APP => starting connection 🚀');
         ws.send('pong');
         ws.send(indexify('usercon'));
+        setupActions( currLang, ws );
     });
 
     ws.addEventListener('message', (message) => { 

@@ -1,19 +1,10 @@
-// CUSTOMER/PROJECT SETTINGS
-
-//      CHANGING SETTINGS:
-//      => don't change the key (left side) of each row!
-//      => change the value (right side)
-//          -> this will edit the corresponding text in the web app
-//      => you can add up to 8 languages
-//          -> the web app defaults to the 1. language
-//      => you can add up to 8 scenes (starting with index 0!)
-//          -> scenes need: a mode (singleplayer/partymode) and a thumbnail
-//              > look out for Upper-/Lowercase in the filename!
+// CONTERRA FME DAYS 2023 SETTINGS
 
 export const json = {
-    "customer": "Vorzeigekind",
-    "event": "",
-    "path": "default",
+    "customer": "conterra",
+    "event": "FME-Days 2023",
+    "path": "conterra-fme-2023",
+    "default_language": "german",
     "languages": {
         "english": {
             "title-loading-video": "Downloading your video...",
@@ -34,7 +25,7 @@ export const json = {
             "scene-4": "FME's Got Talent",
             "scene-5": "Meet Don & Dale",
             "button-back-record": "Back",
-            "title-record": "Press the button below",
+            "title-record": "Let's go",
             "text-record": "Push the record button and put your phone away.",
             "button-record": "Record",
             "title-recording": "Download",
@@ -44,7 +35,7 @@ export const json = {
             "text-video": "Watch online or download.<br />You can post your video using #Peak23VideoAward",
             "button-video-1zu1": "1:1 format",
             "button-video": "16:9 format",
-            "title-text": "Nearly ready",
+            "title-text": "So close",
             "text-text": "Your video will be ready in a couple of seconds. This page will reload automatically.",
             "title-error-id": "Invalid ID",
             "text-error-id": "This ID is invalid. Simply rescan the QR code in the Magic Video Cube!",
@@ -74,7 +65,7 @@ export const json = {
             "scene-4": "FME's Got Talent",
             "scene-5": "Triff Don & Dale",
             "button-back-record": "Zurück",
-            "title-record": "Drück den Button",
+            "title-record": "Los geht's",
             "text-record": "Drücke den Aufnahme-Button und stecke dein Handy weg.",
             "button-record": "Aufnehmen",
             "title-recording": "Download",

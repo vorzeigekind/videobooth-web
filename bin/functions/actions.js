@@ -50,11 +50,11 @@ function setupForward(){
 }
 
 // load all buttons setups
-export function setupActions( ws ){
+export function setupActions( currLang, ws ){
     console.log( 'WEB APP => initialising buttons 👆' );
 
     setupScenes( ws );
-    setupLanguages( ws );
+    setupLanguages( currLang, ws );
     setupRecord( ws );
     setupBack();
     setupForward();

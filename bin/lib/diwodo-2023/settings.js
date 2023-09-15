@@ -1,5 +1,16 @@
 // VORZEIGEKIND AT DIWODO SETTINGS
 
+//      CHANGING SETTINGS:
+//      => don't change the key (left side) of each row!
+//      => change the value (right side)
+//          -> this will edit the corresponding text in the web app
+//      => change path to be the same as the folder you created
+//      => you can add up to 8 languages
+//          -> the web app defaults to the 1. language
+//      => you can add up to 8 scenes (starting with index 0!)
+//          -> scenes need: a mode (singleplayer/partymode) and a thumbnail
+//              > look out for Upper-/Lowercase in the filename!
+
 export const json = {
     "customer": "Vorzeigekind",
     "event": "DiWoDo 2023",

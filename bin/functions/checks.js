@@ -2,10 +2,11 @@
 
 // import modules
 import { json as config } from '../config.js';
+import { json as customer } from '../customer.js';
 import { setupSwitcher, goToSection, goToLanding } from './section.js';
 import { loadVideo } from './video.js';
 import { setupScenes } from './scene.js';
-import { setupLanguages } from './language.js';
+import { setupLanguages, getLangCookie, setLangCookie } from './language.js';
 import { startSocket } from './websocket.js';
 
 // get id from query attribute
@@ -49,6 +50,15 @@ function checkText(){
 function checkAll(){
     console.log( 'WEB APP => initialising checks' );
 
+    var currLang = getLangCookie();
+    if ( currLang == 'none' ) {
+        console.log( 'WEB APP => no cookie setting: ' + customer.default_language );
+        setLangCookie( customer.default_language );
+        currLang = customer.default_language;
+    } else if ( currLang != 'none' ) {
+        console.log( 'WEB APP => cookie found, setting: ' + currLang );
+    }
+
     setupSwitcher();
     var statusVideo1zu1 = checkVideo( '1zu1' );
     var statusText = checkText();
@@ -58,29 +68,24 @@ function checkAll(){
         goToSection( 'video' );
         loadVideo( id );
         setupScenes( 'nows' );
-        setupLanguages( 'nows' );
+        setupLanguages( currLang, 'nows' );
     } else if ( statusText == true ){
         console.log( 'WEB APP => text available 🎊' );
 
         goToSection( 'text' );
         setupScenes( 'nows' );
-        setupLanguages( 'nows' );
+        setupLanguages( currLang, 'nows' );
         setTimeout(() => { 
             console.log( 'WEB APP => reloading page to recheck video 🔄' );
-
             location.reload();
         }, 10000);
     } else {
         if ( id == null ) {
             console.log( 'WEB APP => ERROR => no token ⁉️' );
-
             goToSection( 'loading' );
             goToLanding();
-            //goToSection( 'error-no-id' );
-            //setupScenes( 'nows' );
-            //setupLanguages( 'nows' );
         } else {
-            startSocket( id );;
+            startSocket( currLang, id );;
         }
     }
 }
